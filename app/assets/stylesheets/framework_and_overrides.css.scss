@@ -33,14 +33,147 @@ img {
   }
 // apply styles to HTML elements
 // to make views framework-neutral
+
+html,body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  height:100%;
+  color: #333333;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
 main {
   @extend .container;
-  background-color: #eee;
-  padding-bottom: 80px;
+  overflow: auto;
+  background-color: #fff;
+  color: $gray-light;
+  padding-bottom: 150px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
 section {
   @extend .row;
-  margin-top: 20px;
   }
+
+.section-custom {
+  background-color: $gray-lighter;
+  border-color: #666666;
+  margin: 5%;
+  padding: 1em;
+}
+
+article {
+  margin: 5%;
+}
+
+article header {
+  margin: 5%;
+}
+
+
+$navbar-custom-bg-color:#33B887;
+$navbar-custom-bg-color-dark: darken($navbar-custom-bg-color,10%);
+$navbar-custom-color:lighten($navbar-custom-bg-color,20%);
+
+.navbar-custom {
+  background-color: $navbar-custom-bg-color;
+  color: #fff;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text
+{
+  color: #ffffff;
+}
+
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: $navbar-custom-color;
+  background-color: transparent;
+}
+
+.navbar-custom .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
+  color:  $navbar-custom-color;
+  background-color:$navbar-custom-bg-color-dark;
+}
+
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+
+  color:  $navbar-custom-color;
+  background-color:$navbar-custom-bg-color-dark;
+}
+
+.navbar-custom .navbar-nav > .disabled > a,
+.navbar-custom .navbar-nav > .disabled > a:hover,
+.navbar-custom .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+
+  background-color:$navbar-custom-bg-color-dark;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color:$navbar-custom-bg-color-dark;
+}
+
+.navbar-custom .navbar-nav > .open > a,
+.navbar-custom .navbar-nav > .open > a:hover,
+.navbar-custom .navbar-nav > .open > a:focus {
+  color:  $navbar-custom-color;
+  background-color:$navbar-custom-bg-color-dark;
+}
+
+@media (max-width: 767px) {
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+    color:  $navbar-custom-color;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+
+    color:$navbar-custom-bg-color-dark;
+    background-color: transparent;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+
+    color:  $navbar-custom-color;
+    background-color:$navbar-custom-bg-color-dark;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+}
+.navbar-custom .navbar-link {
+  color: #ffffff;
+}
+.navbar-custom .navbar-link:hover {
+  color:  $navbar-custom-color;
+}
+
+.footer {
+  @extend .container;
+  position: relative;
+  margin-top: -150px;
+  height: 150px;
+  color: $gray-light;
+  background-color: darken($gray-lighter,20%);
+  clear: both;
+  padding-top: 20px;
+  width: 100%;
+  vertical-align: baseline;
+}

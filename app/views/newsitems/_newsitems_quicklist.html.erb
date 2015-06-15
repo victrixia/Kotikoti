@@ -1,0 +1,8 @@
+<% @newsitems.each do |newsitem| %>
+    <tr>
+      <td><%= newsitem.created_at %></td><br>
+      <td><%= link_to newsitem.name, newsitem %></td><br>
+      <td><i><%= newsitem.content %></i></td>
+
+    </tr>
+<% end %>
