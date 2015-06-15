@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Newsitems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newsitems.each do |newsitem| %>
+      <tr>
+        <td><%= newsitem.name %></td>
+        <td><%= newsitem.content %></td>
+        <td><%= link_to 'Show', newsitem %></td>
+        <td><%= link_to 'Edit', edit_newsitem_path(newsitem) %></td>
+        <td><%= link_to 'Destroy', newsitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Newsitem', new_newsitem_path %>
