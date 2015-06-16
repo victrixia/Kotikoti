@@ -1,14 +1,28 @@
 Rails.application.routes.draw do
+  resources :users
+
   resources :newsitems
   get 'newsitems/newsitems_quicklist', to: 'newsitems#newsitems_quicklist'
 
   get 'edustajat', to:'pages#representatives'
 
+  get 'kirjaudu', to: 'session#new'
+
+  resource :session, only: [:new, :create, :delete]
+
+  root 'pages#index'
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

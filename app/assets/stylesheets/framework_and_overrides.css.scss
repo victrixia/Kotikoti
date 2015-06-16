@@ -202,3 +202,9 @@ footer {
   right: 50%;
 
 }
+
+#ylareuna{
+  position: relative;
+  height: 150px;
+  background-color: lighten($navbar-custom-bg-color, 30%);
+}
