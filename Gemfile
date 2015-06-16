@@ -4,6 +4,9 @@ ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 
+# password crypting
+
+gem 'bcrypt', '~> 3.1.10'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
