@@ -1,5 +1,5 @@
 <article>
-
+  <section>
   <header><p>
 
     <h2><%= @newsitem.name %></h2>
@@ -7,8 +7,8 @@
     <p>Luonut <b><%= link_to @newsitem.user.username, user_path(@newsitem.user) %></b>
       <i><%= @newsitem.created_at %></i></p></header>
 
-  <section><%= @newsitem.content %></section>
+  <%= @newsitem.content %></section>
 </article>
 
-<%= link_to 'Muokkaa', edit_newsitem_path(@newsitem) if current_user%>
+<%= link_to 'Muokkaa', edit_newsitem_path(@newsitem) if current_user %>
 <%= link_to 'Takaisin', newsitems_path %>
