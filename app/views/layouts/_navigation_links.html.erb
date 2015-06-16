@@ -1,5 +1,8 @@
-
-
 <%# add navigation links to this file %>
 <li><%= link_to 'Ajankohtaista', newsitems_path %></li>
 <li><%= link_to 'Edustajat', edustajat_path %></li>
+<li>
+  <% unless current_user.nil? %>
+      <%= link_to "#{current_user.username} kirjautunut sisään", current_user %></li>
+     <li><%= link_to 'Kirjaudu ulos', signout_path, method: :delete %></li>
+<% end %>

@@ -89,13 +89,19 @@ figure img {
 /* CUSTOM NAVBAR */
 
 
-$navbar-custom-bg-color:#33B887;
+$navbar-custom-bg-color:#689999;
 $navbar-custom-bg-color-dark: darken($navbar-custom-bg-color,10%);
 $navbar-custom-color:lighten($navbar-custom-bg-color,20%);
 
 .navbar-custom {
   background-color: $navbar-custom-bg-color;
   color: #fff;
+
+  /* override rounded corners*/
+
+  border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
 }
 
 .navbar-custom .navbar-brand,
@@ -205,6 +211,8 @@ footer {
 
 #ylareuna{
   position: relative;
+  width: 100%;
+  margin-bottom: -150;
   height: 150px;
   background-color: lighten($navbar-custom-bg-color, 30%);
 }

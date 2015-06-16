@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users   # MUISTA POISTAA TÄÄ ENNEN TUOTANTOON MENOA
 
   resources :newsitems
   get 'newsitems/newsitems_quicklist', to: 'newsitems#newsitems_quicklist'
 
   get 'edustajat', to:'pages#representatives'
 
-  get 'kirjaudu', to: 'session#new'
+  get 'kirjaudu', to: 'sessions#new'
+  delete 'signout', to: 'sessions#destroy'
 
-  resource :session, only: [:new, :create, :delete]
+  resource :session, only: [:new, :create]
+
+
 
   root 'pages#index'
 

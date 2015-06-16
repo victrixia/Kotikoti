@@ -1,0 +1,8 @@
+<h1>Kirjaudu sisään</h1>
+
+<section><p>Tämä kirjautumissivu on tarkoitettu vain sivuston ylläpitäjille.</p></section>
+
+<%= form_tag session_path do %>
+    <%= text_field_tag :username, params[:username] %>
+    <%= submit_tag "Kirjaudu sisään" %>
+<% end %>
