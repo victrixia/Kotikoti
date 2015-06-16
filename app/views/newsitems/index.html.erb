@@ -2,16 +2,21 @@
 
 <h1>Ajankohtaista</h1>
 
+<p><%= link_to 'Luo uusi tiedote', new_newsitem_path, class:'btn btn-primary' if current_user %></p>
+
+
 <table class = "table table-responsive">
 
   <tbody>
     <% @newsitems.each do |newsitem| %>
       <tr>
-        <td><%= newsitem.name %></td>
-        <td><%= newsitem.content %></td>
-        <td><%= link_to 'Näytä', newsitem %></td>
+        <td><%= link_to newsitem.name, newsitem %></td>
+        <td><%= truncate(newsitem.content, :length => 70, :separator => ' ') %></td>
+
+        <% unless current_user.nil? %>
         <td><%= link_to 'Muokkaa', edit_newsitem_path(newsitem) %></td>
         <td><%= link_to 'Poista', newsitem, method: :delete, data: { confirm: 'Oletko varma? Et voi peruuttaa toimintoa.' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -19,4 +24,3 @@
 
 <br>
 
-<%= link_to 'New Newsitem', new_newsitem_path %>
