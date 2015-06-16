@@ -1,3 +1,25 @@
 // Place all the styles related to the newsitems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// import the CSS framework
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+article {
+  margin: 0 15% 10% 20%;
+  background-color: lighten($gray-lighter,5%);
+  border: thin groove;
+}
+
+article header {
+  position: relative;
+
+}
+section {
+  position:relative;
+  margin: 0 20% 5% 5%;
+  font-size: 120%;
+
+
+}

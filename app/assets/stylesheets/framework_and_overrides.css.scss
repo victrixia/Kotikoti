@@ -55,9 +55,11 @@ main {
   }
 section {
   @extend .row;
+
   }
 
 .section-custom {
+
   background-color: $gray-lighter;
   border-color: #666666;
   margin: 5%;
@@ -69,7 +71,8 @@ article {
 }
 
 article header {
-  margin: 5%;
+  margin: 5% 0 5% 0;
+  border-bottom: thin groove;
 }
 
 figure {
@@ -79,6 +82,8 @@ figure {
 
 figure figcaption {
   float: right;
+  font-size: 90%;
+  font-style: italic;
 }
 
 figure img {

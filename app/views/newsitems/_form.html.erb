@@ -1,27 +1,29 @@
 <%= form_for(@newsitem) do |f| %>
-  <% if @newsitem.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@newsitem.errors.count, "error") %> prohibited this news item from being saved:</h2>
+    <% if @newsitem.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@newsitem.errors.count, "error") %> prohibited this news item from being saved:</h2>
 
-      <ul>
-      <% @newsitem.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @newsitem.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label 'Otsikko' %><br>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
+    <div class="field">
+      <%= f.label 'Sisältö' %><br>
+      <%= f.text_area :content, :size => '30x10' %>
+    </div>
+    <%= f.hidden_field :current_user.id %>
 
-  <div class="field">
-    <%= f.label 'Otsikko' %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label 'Sisältö' %><br>
-    <%= f.text_area :content, :size => '30x10' %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 
     <!--Lisää mahdollisuus lisätä kuva tms.-->
 <% end %>

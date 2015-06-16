@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ajankohtaista</h1>
 
-<p><%= link_to 'Luo uusi tiedote', new_newsitem_path, class:'btn btn-primary' if current_user %></p>
+<article><section>
+  <header><h1>Ajankohtaista</h1>
 
+<p><%= link_to 'Luo uusi tiedote', new_newsitem_path, class:'btn btn-primary' if current_user %></p></header>
 
 <table class = "table table-responsive">
 
@@ -20,7 +21,8 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table></section>
+</article>
 
 <br>
 
