@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
 
   has_many :newsitems
 
-  validates :password, length: {minimum: 6}
-  validates :password, format: {with: /\d.*[A-Z]|[A-Z].*\d/, message: "pitäisi sisältää yksi numero ja yksi iso kirjain"}
-
+ validates :password, :presence => true, :confirmation => true, length: {minimum: 6}, format: {with: /\d.*[A-Z]|[A-Z].*\d/, message: " / salasanan pitäisi sisältää yksi numero ja yksi iso kirjain"}, :if => :password
 
 end

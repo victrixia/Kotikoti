@@ -1,7 +1,7 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> prevented the changes from being saved, tallennus ei onnistunut seuraavista syistä:</h2>
 
       <ul>
       <% @user.errors.full_messages.each do |message| %>
@@ -12,10 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br>
+    <%= f.label :nimi %><br>
     <%= f.text_field :username %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :kuvaus %><br>
+      <%= f.text_area :description, :size => '30x10' %>
+    </div>
+
+    <p>Täytä seuraavat kentät vain jos haluat vaihtaa salasanan! Salasanassa tulisi olla vähintään yksi iso ja yksi pieni kirjain ja yksi numero. Ei välilyöntejä. Pituus vähintään 6 merkkiä.</p>
+
+    <div class="field">
+      <%= f.label :uusi_salasana %><br/>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :varmista_uusi_salasana %><br/>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

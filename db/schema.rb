@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616204530) do
+ActiveRecord::Schema.define(version: 20150709115130) do
 
   create_table "newsitems", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20150616204530) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.boolean  "admin"
+    t.string   "description"
+    t.string   "img_tag"
   end
 
 end

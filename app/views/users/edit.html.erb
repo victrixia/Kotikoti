@@ -1,5 +1,7 @@
-<h1>Muokataan käyttäjää</h1>
+<h1>Muokataan käyttäjän <%= @user.username %> tietoja</h1>
+
+
+<%= link_to 'Näytä profiili', @user %>
 
 <%= render 'form' %>
 
-<%= link_to 'Näytä', @user %>
