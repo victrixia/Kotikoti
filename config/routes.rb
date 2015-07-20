@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get 'kirjaudu', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'
 
+  get 'palvelut', to: 'pages#index'
+  get 'kuvat', to: 'pages#index'
+  get 'yhteys', to: 'pages#index'
+
   resource :session, only: [:new, :create]
 
 

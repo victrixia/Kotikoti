@@ -7,17 +7,20 @@
 
 
 article {
-  margin: 0 15% 10% 20%;
-  background-color: lighten($gray-lighter,5%);
-  border: thin groove;
+  margin: 0 auto;
 }
 
 .index {
+
+  background-color: lighten($gray-lighter,5%);
+  border: thin groove;
   margin: 0;
 }
 
 .index .header {
   margin: 0 5% 0 5%;
+  border: none;
+  border-bottom: thin groove;
 }
 
 article header {

@@ -1,6 +1,9 @@
 <%# add navigation links to this file %>
 <li><%= link_to 'Ajankohtaista', newsitems_path %></li>
 <li><%= link_to 'Edustajat', edustajat_path %></li>
+<li> <%= link_to 'Palvelut', palvelut_path%> </li>
+<li> <%= link_to 'Kuvia', kuvat_path%></li>
+<li> <%= link_to 'Ota yhteyttä', yhteys_path%></li>
 <li>
   <% unless current_user.nil? %>
       <%= link_to "#{current_user.username} kirjautunut sisään", current_user %></li>
